@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background-color: #f1f2f4;
+    color: #222222;
+}
+
+
+h2 {
+    text-align: center;
+}
+
+.principal {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    background: linear-gradient(to right, black 50%, red 50%);
+}
+
+.encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.encabezado h2 {
+    margin: 0;
+}
+
+nav a {
+    margin-left: 1.2rem;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #d5001c;
+}
+
+.portada {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.portada h1 {
+    margin: 0;
+    font-size: 4.5rem;
+}
+
+.titulo {
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 150%;
+    max-height: 150%;
+}
+
+.portada p {
+    font-size: 1.4rem;
+    margin: 1rem 0 2rem 0;
+}
+
+.boton {
+    display: inline-block;
+    padding: .6rem 1.4rem;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #d5001c;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background-color: #9c0014;
+}
+
+.bloque {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+}
+
+.acerca {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.acerca img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cuadricula {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+.tarjeta {
+    padding: 1rem;
+    text-align: center;
+    background-color: #ffffff;
+    border: 2px solid #d0d3d8;
+    border-radius: 8px;
+}
+
+.tarjeta:hover {
+    border-color: #d5001c;
+}
+
+.tarjeta img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.precio {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #d5001c;
+}
+
+.contacto {
+    padding: 2.5rem 1.5rem;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: .8rem 0 .3rem 0;
+}
+
+input,
+textarea {
+    padding: .6rem;
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 6px;
+}
+
+form .boton {
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    border: none;
+    border-radius: 8px;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+    color: #999999;
+    background-color: red;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .cuadricula {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .acerca,
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .encabezado {
+        flex-direction: column;
+        gap: .8rem;
+    }
+
+    nav a {
+        margin: 0 .5rem;
+    }
+
+    .portada h1 {
+        font-size: 2.8rem;
+    }
+
+    .cuadricula {
+        grid-template-columns: 1fr;
+    }
+}
