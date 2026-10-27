@@ -1,120 +1,92 @@
 <!DOCTYPE html>
 <html lang="es">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Porsche</title>
+    <title>Porsche - Inicio</title>
+    <!-- Bootstrap 5 por CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
+ 
 <body>
-    <section class="principal" id="inicio">
-
-        <header class="encabezado">
-            <h2>Porsche</h2>
-            <nav>
-                <a href="#inicio">Inicio</a>
-                <a href="#acerca">Acerca de</a>
-                <a href="#servicios">Servicios</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-        </header>
-       <div class="portada">
-    <div class="titulo">
-
-        <div class="logo">
-            <img src="img/logo.png">
+ 
+    <!-- Menú de navegación (es igual en todas las páginas) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Porsche</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="historia.html">Historia</a></li>
+                </ul>
+            </div>
         </div>
-
-        <h1>Porsche</h1>
+    </nav>
+ 
+    <main class="contenido">
+ 
         
-    </div>
-    <p>"Impulsado por los sueños"</p>
-</div>
-
-    </section>
-    <section class="contenido">
-
-        <div class="bloque" id="acerca">
-            <h2>Acerca de Porsche</h2>
-            <div class="acerca">
-                <img src="img/GT3RS.png" alt="Porsche deportivo">
-                <div>
-                    <p>Porsche es una marca alemana de autos deportivos fundada en Stuttgart en 1948.</p>
-                    <p>Se conoce por su diseño, su potencia y por hacer autos que se pueden usar todos los días.</p>
-                    <p>En nuestra agencia te ayudamos a comprar, financiar y cuidar tu Porsche.</p>
+        <section class="portada">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo de Porsche">
+            </div>
+            <h1 class="fw-bold">Porsche</h1>
+            <p>"Impulsado por los sueños"</p>
+        </section>
+ 
+       
+        <section class="container py-5">
+            <h2 class="text-center fw-bold mb-4">Conoce la marca</h2>
+ 
+            <div class="row g-4 justify-content-center">
+ 
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card tarjeta h-100 text-center">
+                        <div class="card-body">
+                            <span class="badge anio mb-2">Desde 1931</span>
+                            <h3 class="card-title fw-bold">Historia</h3>
+                            <p class="card-text">Los años importantes de Porsche, desde su fundación hasta hoy.</p>
+                        </div>
+                    </div>
                 </div>
+ 
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card tarjeta h-100 text-center">
+                        <div class="card-body">
+                            <span class="badge anio mb-2">5 modelos</span>
+                            <h3 class="card-title fw-bold">Emblemáticos</h3>
+                            <p class="card-text">Los autos que hicieron famosa a la marca.</p>
+                        </div>
+                    </div>
+                </div>
+ 
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card tarjeta h-100 text-center">
+                        <div class="card-body">
+                            <span class="badge anio mb-2">4 modelos</span>
+                            <h3 class="card-title fw-bold">Exclusivos</h3>
+                            <p class="card-text">Los Porsche más raros y de edición limitada.</p>
+                        </div>
+                    </div>
+                </div>
+ 
             </div>
-        </div>
-
-        <div class="bloque" id="servicios">
-            <h2>Servicios</h2>
-            <div class="cuadricula">
-
-                <article class="tarjeta">
-                    <h3>Porsche GT3RS</h3>
-                    <img id="img1"
-                         src="img/GT3RS.png"
-                         data-original="img/GT3RS.png"
-                         data-hover="img/GT3RS1.png"
-                         alt="Porsche GT3RS">
-                    <p>Modelo 2024, motor de 3.0 litros y 379 hp.</p>
-                    <p class="precio">$2,350,000 MXN</p>
-                    <a href="#contacto" class="boton">Me interesa</a>
-                </article>
-
-                <article class="tarjeta">
-                    <h3>Mantenimiento</h3>
-                    <img src="img/Man.jpg" alt="Porsche GT3 RS">
-                    <p>Servicio con técnicos especializados y refacciones originales.</p>
-                </article>
-
-                <article class="tarjeta">
-                    <h3>Financiamiento</h3>
-                    <img src="img/FI.webp" alt="Porsche 911">
-                    <p>Planes de pago y recibimos tu auto actual como parte del pago.</p>
-                </article>
-
-            </div>
-        </div>
-
-    </section>
-    <section class="contacto" id="contacto">
-
-        <h2>Contacto</h2>
-
-        <div class="contacto-grid">
-
-            <form id="formulario">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre">
-
-                <label for="correo">Correo</label>
-                <input type="email" id="correo">
-
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" rows="4"></textarea>
-
-                <button type="submit" class="boton">Enviar</button>
-                <p id="respuestas"></p>
-            </form>
-
-            <iframe
-                src="https://www.google.com/maps?q=Porsche+Centre+Ciudad+de+Mexico&output=embed"
-                title="Mapa de Porsche">
-            </iframe>
-
-        </div>
-
-    </section>
-
-    <footer>
-        <p>Porsche</p>
+        </section>
+ 
+    </main>
+ 
+ 
+    <footer class="pie text-center py-3">
+        <p class="mb-0">Porsche - Historia y autos de la marca</p>
     </footer>
-
-    <script src="funtion.js"></script>
-
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+ 
 </body>
-
+ 
 </html>
