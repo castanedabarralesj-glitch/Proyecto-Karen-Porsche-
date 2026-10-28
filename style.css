@@ -1,5 +1,3 @@
-
- 
 * {
     box-sizing: border-box;
 }
@@ -9,26 +7,68 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: Arial;
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
     background-color: #f1f2f4;
     color: #222222;
 }
- 
+
 .contenido {
     flex: 1;
+}
+
+.navbar {
+    transition: box-shadow 0.3s ease;
+}
+
+.navbar.sombra {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #d5001c;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 2px;
+    width: 0;
+    height: 2px;
+    background-color: #d5001c;
+    transition: width 0.3s ease, left 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover {
     color: #d5001c;
 }
- 
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    left: 0;
+    width: 100%;
+}
+
 .navbar-nav .nav-link.active {
     color: #d5001c;
     font-weight: bold;
 }
- 
+
 .portada {
-    min-height: 80vh;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,83 +77,272 @@ body {
     color: #ffffff;
     background: linear-gradient(to right, black 50%, red 50%);
 }
- 
+
 .portada h1 {
     margin: 0;
     font-size: 4.5rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
 }
- 
+
 .portada p {
-    font-size: 1.4rem;
     margin: 1rem 0 0 0;
+    font-size: 1.4rem;
+    font-style: italic;
 }
- 
+
 .logo img {
     height: 150px;
     max-width: 100%;
+    animation: flotar 3s ease-in-out infinite;
 }
- 
 
-.btn-porsche {
+.encabezado h1,
+.encabezado h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.encabezado h1::after,
+.encabezado h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    margin: 0.8rem auto 0 auto;
+    background-color: #d5001c;
+    border-radius: 2px;
+}
+
+.boton {
+    padding: 0.6rem 1.4rem;
     color: #ffffff;
     background-color: #d5001c;
     border: none;
     border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
- 
-.btn-porsche:hover {
+
+.boton:hover {
     color: #ffffff;
     background-color: #9c0014;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(213, 0, 28, 0.4);
 }
- 
-.anio {
+
+.btn.boton:active {
+    color: #ffffff;
+    background-color: #7a0010;
+    transform: translateY(0);
+}
+
+.boton-negro {
+    background-color: #111111;
+}
+
+.boton-negro:hover {
+    background-color: #d5001c;
+}
+
+.etiqueta {
     background-color: #d5001c;
     color: #ffffff;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
- 
 
 .tarjeta {
+    overflow: hidden;
     background-color: #ffffff;
     border: 2px solid #d0d3d8;
-    border-radius: 8px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
- 
-.tarjeta:hover {
-    border-color: #d5001c;
-}
- 
 
-.tarjeta-img {
+.tarjeta:hover {
+    transform: translateY(-8px);
+    border-color: #d5001c;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.foto {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform 0.5s ease;
 }
- 
+
+.tarjeta:hover .foto {
+    transform: scale(1.1);
+}
 
 .evento {
     background-color: #ffffff;
     border: none;
     border-left: 5px solid #d5001c;
     border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
- 
-.detalle-img {
+
+.evento:hover {
+    transform: translateX(8px);
+    border-left-color: #000000;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.fila:hover .etiqueta {
+    transform: scale(1.15);
+    background-color: #000000;
+}
+
+.marco {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.foto-grande {
+    display: block;
     width: 100%;
     max-height: 400px;
     object-fit: cover;
-    border-radius: 8px;
+    transition: transform 0.5s ease;
 }
- 
+
+.foto-grande.acercar {
+    transform: scale(1.08);
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #d5001c;
+    box-shadow: 0 0 0 0.2rem rgba(213, 0, 28, 0.25);
+}
 
 .pie {
     color: #ffffff;
     background-color: #d5001c;
+    border-top: 4px solid #000000;
 }
- 
-/* Pantallas chicas */
+
+.pie p {
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.subir {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.subir.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.subir.mostrar:hover {
+    transform: translateY(-4px);
+}
+
+.aparecer {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.aparecer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.aparecer:nth-child(3n+2) {
+    transition-delay: 0.15s;
+}
+
+.aparecer:nth-child(3n+3) {
+    transition-delay: 0.3s;
+}
+
+.entrada {
+    animation: entrar 1s ease both;
+}
+
+.retraso {
+    animation-delay: 0.3s;
+}
+
+.retraso-largo {
+    animation-delay: 0.6s;
+}
+
+@keyframes entrar {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotar {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@media (max-width: 992px) {
+    .foto {
+        height: 220px;
+    }
+}
+
 @media (max-width: 600px) {
     .portada h1 {
         font-size: 2.8rem;
+        letter-spacing: 3px;
+    }
+
+    .portada p {
+        font-size: 1.1rem;
+    }
+
+    .logo img {
+        height: 110px;
+    }
+
+    .subir {
+        right: 12px;
+        bottom: 12px;
     }
 }
- 
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .aparecer {
+        opacity: 1;
+        transform: none;
+    }
+}
