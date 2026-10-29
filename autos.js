@@ -1,5 +1,4 @@
 const lista = document.querySelector("#lista");
-const buscador = document.querySelector("#buscador");
 const selector = document.querySelector("#decada");
 const mensaje = document.querySelector("#mensaje");
 const tipo = lista.getAttribute("data-tipo");
@@ -45,7 +44,6 @@ function activarBotones() {
 }
 
 function mostrarAutos() {
-    const texto = buscador.value.toLowerCase();
     const decada = selector.value;
     let tarjetas = "";
     let total = 0;
@@ -54,10 +52,9 @@ function mostrarAutos() {
         const auto = autos[i];
         const decadaAuto = Math.floor(auto.anio / 10) * 10;
         const mismoTipo = auto.tipo === tipo;
-        const mismoNombre = auto.nombre.toLowerCase().includes(texto);
         const mismaDecada = decada === "todas" || decadaAuto === Number(decada);
 
-        if (mismoTipo && mismoNombre && mismaDecada) {
+        if (mismoTipo && mismaDecada) {
             tarjetas += crearTarjeta(auto);
             total++;
         }
@@ -75,7 +72,6 @@ function mostrarAutos() {
     setTimeout(mostrarElementos, 50);
 }
 
-buscador.addEventListener("input", mostrarAutos);
 selector.addEventListener("change", mostrarAutos);
 
 mostrarAutos();
